@@ -32,8 +32,8 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Image HeightRequest="250"/>
-                        <Label FontSize="Medium"/>
+                        <Image HeightRequest="250" Source="{Binding Image}"/>
+                        <Label FontSize="Medium" Text="{Binding Title}"/>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

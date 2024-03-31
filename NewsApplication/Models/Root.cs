@@ -2,7 +2,7 @@
 
 namespace NewsApplication.Models;
 
-class Root
+public class Root
 {
     [JsonProperty("totalArticles")]
     public int TotalArticles { get; set; }

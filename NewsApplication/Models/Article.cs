@@ -2,7 +2,7 @@
 
 namespace NewsApplication.Models;
 
-class Article
+public class Article
 {
     [JsonProperty("title")]
     public string Title { get; set; }
