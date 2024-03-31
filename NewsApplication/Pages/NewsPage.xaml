@@ -7,7 +7,8 @@
         <Label Grid.Row="0" Text="TOP 24 News " FontSize="Title" VerticalOptions="Center"
                HorizontalOptions="Center"></Label>
 
-        <CollectionView Grid.Row="1" x:Name="CollectionViewCategories" HeightRequest="60">
+        <CollectionView Grid.Row="1" x:Name="CollectionViewCategories" HeightRequest="60"
+                        SelectionMode="Single" SelectionChanged="CollectionViewCategories_OnSelectionChanged">
 
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout Orientation="Horizontal" ItemSpacing="5"></LinearItemsLayout>
@@ -16,7 +17,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10">
-                        <Label FontSize="Medium"/>
+                        <Label FontSize="Medium" Text="{Binding Name}"/>
                     </StackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
