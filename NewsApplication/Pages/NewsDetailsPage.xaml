@@ -2,4 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NewsApplication.Pages.NewsDetailsPage">
+
+    <Grid RowDefinitions="Auto, Auto, Auto">
+        <Image Grid.Row="0" x:Name="Image" HeightRequest="300"
+               Aspect="AspectFill"></Image>
+
+        <Label Grid.Row="1" x:Name="Title" Margin="10" FontSize="Title"></Label>
+        <Label Grid.Row="2" x:Name="Description" Margin="10" FontSize="Body"></Label>
+    </Grid>
 </ContentPage>

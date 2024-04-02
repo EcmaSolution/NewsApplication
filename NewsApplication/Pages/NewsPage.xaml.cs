@@ -5,6 +5,7 @@ namespace NewsApplication.Pages;
 
 public partial class NewsPage : ContentPage
 {
+    private bool _isNextPage = false;
     private List<Article>? Articles { get; set; }
 
     private readonly List<ArticleCategory>? _categories =
@@ -31,7 +32,8 @@ public partial class NewsPage : ContentPage
     {
         base.OnAppearing();
 
-        await PassArticleCategoryName("General");
+        _isNextPage = true;
+        if(!_isNextPage) await PassArticleCategoryName("General");
     }
 
     private async Task PassArticleCategoryName(string category)
@@ -50,5 +52,11 @@ public partial class NewsPage : ContentPage
     {
         var selectedItem = e.CurrentSelection.FirstOrDefault() as ArticleCategory;
         await PassArticleCategoryName(selectedItem!.Name);
+    }
+
+    private void CollectionViewNews_OnSelectionChanged(object? sender, SelectionChangedEventArgs e)
+    {
+        var selectedItem = e.CurrentSelection.FirstOrDefault() as Article;
+        Navigation.PushAsync(new NewsDetailsPage(selectedItem));
     }
 }
