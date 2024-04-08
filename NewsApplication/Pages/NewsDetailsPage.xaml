@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NewsApplication.Pages.NewsDetailsPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="First Item"></ToolbarItem>
+        <ToolbarItem IconImageSource="share.svg" x:Name="ShareBtn" Clicked="ShareBtn_OnClicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <Grid RowDefinitions="Auto, Auto, Auto">
         <Image Grid.Row="0" x:Name="Image" HeightRequest="300"
                Aspect="AspectFill"></Image>
